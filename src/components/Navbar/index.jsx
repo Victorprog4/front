@@ -8,64 +8,74 @@ function Navbar() {
       position="fixed"
       sx={{
         backgroundColor: "#fff",
-        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.12)",
+        boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.06)",
       }}
     >
       <div
         style={{
           display: "flex",
-          flexDirection: "row",
           alignItems: "center",
+          maxWidth: "1000px",
+          margin: "0 auto",
           width: "100%",
+          border: "1px solid red",
         }}
       >
         <img
-          src="logo.png"
+          src="./src/assets/logo.svg"
           alt="Logo"
-          style={{ height: 40, margin: "8px 16px" }}
+          style={{ height: 52, margin: "8px 16px" }}
         />
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
-            marginRight: "16px",
           }}
         >
           <Button
-            variant="outlined"
+            variant="text"
             onClick={() => navigation("/")}
-            sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
+            sx={{
+              marginRight: 2,
+              marginLeft: 16,
+              color: "#606060",
+              fontSize: "16px",
+            }}
           >
-            Inico
+            Inicio
           </Button>
           <Button
-            variant="outlined"
+            variant="text"
             onClick={() => navigation("/flora-ai")}
-            sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
+            sx={{
+              marginRight: 12,
+              color: "#606060",
+              fontSize: "16px",
+            }}
           >
             Flora AI
           </Button>
           <Button
-            variant="outlined"
+            variant="text"
             onClick={() => navigation("/historico-simulacao")}
-            sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
+            sx={{
+              display: "flex",
+              marginRight: 12,
+              color: "#606060",
+              fontSize: "16px",
+            }}
           >
-            Historico de Simulacoes
+            Histórico de simulações
           </Button>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            marginRight: "16px",
-          }}
-        >
           <Button
-            variant="outlined"
-            onClick={() => navigation("/simular-colheita")}
-            sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
+            variant="text"
+            onClick={() => navigation("/")}
+            sx={{
+              marginRight: 12,
+              color: "#606060",
+              fontSize: "16px",
+            }}
           >
-            Simular de Colheita
+            Simular novo plantio
           </Button>
         </div>
       </div>
