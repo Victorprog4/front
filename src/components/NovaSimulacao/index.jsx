@@ -5,15 +5,17 @@ import {
   InputLabel,
   Button,
 } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./index.css";
-import axios from "axios";
-const API_URL = "http://localhost:5000/previsao";
+import { http } from "../../api";
+import { ConsultaContext } from "../../context";
 
-const estados = [{ value: "RO", label: "Rondonia" }];
-const cultivos = [{ value: "Arroz Integral", label: "Arroz Integral" }];
+
+
 
 function NovaSimulacao() {
+  const {estados ,cultivos} = useContext(ConsultaContext)
+
   const [estadoSelecionado, setEstadoSelecionado] = useState("");
   const [cultivoSelecionado, setCultivoSelecionado] = useState("");
 
@@ -31,18 +33,16 @@ function NovaSimulacao() {
       cultivo: cultivoSelecionado,
     };
 
-    axios
-      .post(API_URL, data)
+    http
+      .post("/previsao", data)
       .then((response) => {
-        // Tratar a resposta da API
+     
         console.log(response.data);
       })
       .catch((error) => {
-        // Tratar erros da requisição
+   
         console.error(error);
       });
-    // Exemplo: realizar cálculos
-    // ...
   };
 
   return (
