@@ -1,14 +1,20 @@
-import { Routes, Route } from "react-router-dom"; // Use Routes and Route in v6
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import NovaSimulacao from "./components/NovaSimulacao";
+
+import "./app.css";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/simular-colheita" element={<NovaSimulacao />} />
+        </Routes>
+      </div>
     </div>
   );
 }

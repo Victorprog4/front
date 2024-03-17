@@ -1,0 +1,11 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Add background color, padding, etc. */
+}
+
+.content {
+  padding-top: 70px; /* Adjust padding as needed */
+}

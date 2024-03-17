@@ -1,23 +1,12 @@
-import React from "react";
-import { AppBar, Button, Menu, MenuItem } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { AppBar, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
+  const navigation = useNavigate();
   return (
     <AppBar
       position="fixed"
       sx={{
-        height: 64,
         backgroundColor: "#fff",
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.12)",
       }}
@@ -26,7 +15,6 @@ function Navbar() {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between",
           alignItems: "center",
           width: "100%",
         }}
@@ -37,31 +25,47 @@ function Navbar() {
           style={{ height: 40, margin: "8px 16px" }}
         />
         <div
-          style={{ display: "flex", flexDirection: "row", marginRight: "16px" }}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginRight: "16px",
+          }}
         >
           <Button
             variant="outlined"
-            component={RouterLink}
-            to="/"
+            onClick={() => navigation("/")}
             sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
           >
             Inico
           </Button>
           <Button
             variant="outlined"
-            component={RouterLink}
-            to="/flora-ai"
+            onClick={() => navigation("/flora-ai")}
             sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
           >
             Flora AI
           </Button>
           <Button
             variant="outlined"
-            component={RouterLink}
-            to="/historico-simulacao"
+            onClick={() => navigation("/historico-simulacao")}
             sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
           >
             Historico de Simulacoes
+          </Button>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginRight: "16px",
+          }}
+        >
+          <Button
+            variant="outlined"
+            onClick={() => navigation("/simular-colheita")}
+            sx={{ marginRight: 16, color: "#333", borderColor: "#333" }}
+          >
+            Simular de Colheita
           </Button>
         </div>
       </div>

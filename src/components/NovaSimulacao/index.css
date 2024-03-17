@@ -1,0 +1,41 @@
+.select-estado,
+.select-grupo {
+  width: 200px;
+  margin: 16px;
+}
+
+.select-estado::before,
+.select-grupo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.select-estado::after,
+.select-grupo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  border-top: 10px solid #ccc;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+@media (max-width: 768px) {
+  .nova-simulacao {
+    flex-direction: column;
+  }
+
+  .select-estado,
+  .select-grupo {
+    width: 100%;
+    margin: 8px;
+  }
+}
